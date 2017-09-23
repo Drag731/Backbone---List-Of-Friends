@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Backbone examples</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="hero-unit span8" id="listOfFriens"></div>
+	</div>
+
+	<script type="text/template" id="mainView">
+		<div class="container">
+			<div class="container__title-bar">
+				<div class="container__title">
+					My Contact List
+				</div>
+				<div class="container__filter">
+					<input type="search" placeholder="find friend">
+					<a href="#" class="clear" title="clear">
+				      <span></span><span></span>
+				    </a>
+				</div>
+				<button class="add-friend addObject">ADD FRIEND</button>
+			</div>
+			<div class="container__data-table">
+				<table id="grid">
+				    <thead>
+				      <tr>
+				        <th data-type="firstName" data-sort="size">First Name</th>
+				        <th data-type="lastName" data-sort="name">Last Name</th>
+				        <th data-sort="description"></th>
+				      </tr>
+				    </thead>
+				    <tbody id="friendsList">
+				    </tbody>
+				</table>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template" id="rowOfFriend">
+			<td><%= firstName %></td>
+			<td><%= lastName %></td>
+			<td>
+				<button class="del-friend deleteRow" data-id="<%= id %>">Del</button>
+			</td>	
+	</script>
+	<script src="js/jslibs/jquery-3.2.1.min.js"></script>
+	<script src="js/jslibs/underscore.js"></script>
+	<script src="js/jslibs/backbone.js"></script>
+	<script src="js/dist/build.js"></script>
+</body>
+</html>
